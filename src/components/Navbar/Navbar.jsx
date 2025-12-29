@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoHeart } from "react-icons/go";
 import { AiFillShopping } from "react-icons/ai";
 import { IoMdSearch } from "react-icons/io";
@@ -7,11 +7,25 @@ import { IoClose } from "react-icons/io5";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  useEffect(() => {
+    const handleScrolled = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScrolled);
+  }, []);
+
   return (
-    <header className=" bg-white fixed top-0 right-0 left-0">
+    <header
+      className={`bg-white fixed top-0 right-0 left-0 z-50 ${
+        isScrolled ? "shadow-md" : " "
+      }`}
+    >
       <nav className=" max-w-[1300px] mx-auto px-10 md:h-[12vh] h-[10vh] flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="text-2xl font-bold">
@@ -63,7 +77,6 @@ function Navbar() {
             <AiFillShopping />
           </a>
           <button
-            href=""
             className="text-[var(--secondary)] text-xl md:hidden outline-none"
             onClick={toggleMenu}
           >
@@ -73,7 +86,7 @@ function Navbar() {
         {/* For mobile device */}
 
         <ul
-          className={` bg-orange-500/12 md:hidden flex-row  text-center  backdrop-blur-xl rounded-2xl font-semibold tracking-wider absolute  space-y-5 p-5   -translate-x-1/2  -left-full transition-all duration-500  top-30 ${
+          className={` bg-orange-500/12 md:hidden flex-row  text-center  backdrop-blur-xl rounded-2xl font-semibold tracking-wider absolute  space-y-5 p-5   -translate-x-1/2  -left-full transition-all duration-500  top-30 shadow-2xl ${
             showMenu ? "left-1/2" : ""
           }
 `}
