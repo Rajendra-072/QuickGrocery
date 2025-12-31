@@ -26,7 +26,7 @@ function Navbar() {
         isScrolled ? "shadow-md" : " "
       }`}
     >
-      <nav className=" max-w-[1300px] mx-auto px-10 md:h-[12vh] h-[10vh] flex justify-between items-center">
+      <nav className=" max-w-[1300px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="text-2xl font-bold">
           Quick<span className="  text-[var(--primary)]">G</span>rocery

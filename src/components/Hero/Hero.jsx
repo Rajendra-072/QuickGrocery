@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 
 function Hero() {
   return (
-    <section className=" max-w-[1300px] max-h-screen mx-auto px-10  md:flex items-center md:mt-22 mt-30">
+    <section className=" max-w-[1300px] mx-auto px-10  md:flex items-center md:mt-22 mt-30">
       {/* hero content */}
       <div className="flex-1 ">
         <span className="bg-orange-100 text-[var(--primary)] md:text-lg text-md px-5 py-2 rounded-full ">
