@@ -1,11 +1,13 @@
 import React from "react";
+import { IoIosArrowForward } from "react-icons/io";
 
 function Footer() {
   return (
     <footer className="bg-zinc-100 py-20">
-      <div className=" max-w-[1300px] mx-auto px-10 flex ">
-        <div className="px-20">
-          <a href="#" className="text-xl font-bold">
+      <div className=" max-w-[1300px] mx-auto px-10 flex flex-wrap gap-10 ">
+        <div className="md:pl-20 md:pr-50 md:basis-[350px] flex-1">
+          {/* Logo */}
+          <a href="#" className="text-2xl font-bold">
             Quick<span className="  text-[var(--primary)]">G</span>rocery
           </a>
           <p className="text-zinc-600 mt-5 max-w-[350px]">
@@ -36,18 +38,24 @@ function Footer() {
           </li>
         </ul>
         <div className="flex-1 ">
-          <h3 className="mt-5 text-zinc-800 text-xl font-bold">
-            Stay Connected
-          </h3>
+          <h3 className=" text-zinc-800 text-xl font-bold">Stay Connected</h3>
           <p className="mt-5 text-zinc-600">
             Question & Feedback?
             <br /> we'd love to here from you.
           </p>
-          <input
-            type="text"
-            placeholder="Email Address.."
-            className="mt-5 border-1 border-orange-500"
-          />
+          {/* Input */}
+          <div className="mt-5 bg-white w-fit flex p-2 rounded-lg pl-2">
+            <input
+              type="email"
+              placeholder="Email Address.."
+              id="email"
+              name="email"
+              className=" focus:outline-none"
+            />
+            <button className="bg-[var(--primary)] rounded-lg p-1 text-white text-xl cursor-pointer ">
+              <IoIosArrowForward />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
