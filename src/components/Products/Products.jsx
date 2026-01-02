@@ -3,6 +3,7 @@ import Heading from "../Heading/Heading";
 import ProductList from "../ProductList/ProductList";
 import Cards from "../Cards/Cards";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 function Products() {
   const categories = ["All", "Fruits", "Vegetables", "Dairy", "SeaFood"];
@@ -46,7 +47,9 @@ function Products() {
         {renderCard}
       </div>
       <div className="mt-15 mx-auto w-fit">
-        <Button content="View All" />
+        <Link to="AllProduct">
+          <Button content="View All" />
+        </Link>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import { AiFillShopping } from "react-icons/ai";
 import { IoMdSearch } from "react-icons/io";
 import { HiMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,15 +29,15 @@ function Navbar() {
     >
       <nav className=" max-w-[1300px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="text-2xl font-bold">
+        <Link to="/" className="text-2xl font-bold">
           Quick<span className="  text-[var(--primary)]">G</span>rocery
-        </a>
+        </Link>
         {/* Desktop menu */}
         <ul className=" md:flex items-center gap-x-15 font-semibold tracking-wider hidden">
           <li>
-            <a href="#" className="text-[var(--primary)]">
+            <Link href="/" className="text-[var(--primary)]">
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#" className="text-zink-800 hover:text-[var(--primary)]">
@@ -92,9 +93,9 @@ function Navbar() {
 `}
         >
           <li>
-            <a href="#" className="text-[var(--primary)]">
+            <Link to="/" className="text-[var(--primary)]">
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#" className="text-zink-800 hover:text-[var(--primary)]">

@@ -4,6 +4,7 @@ import FruitsCat from "../../assets/fruits-and-veggies.png";
 import DairyCat from "../../assets/dairy-and-eggs.png";
 import SeaFoodCat from "../../assets/meat-and-seafood.png";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 function Category() {
   const rendercard = category.map(card => {
@@ -23,7 +24,9 @@ function Category() {
             {card.titel}
           </h3>
           <p className="text-zinc-600 pt-4 pb-10">{card.description}</p>
-          <Button content="See All" />
+          <Link to={card.path}>
+            <Button content="See All" />
+          </Link>
         </div>
       </div>
     );
@@ -51,6 +54,7 @@ const category = [
     description:
       "Fresh, organic produce sourced daily from local farms. Explore a wide range of seasonal fruits and crisp vegetables.",
     image: FruitsCat,
+    path: "/Fruits",
   },
   {
     id: 2,
@@ -58,6 +62,7 @@ const category = [
     description:
       "Wholesome dairy products and free-range eggs. From creamy milk and yogurt to artisanal cheeses.",
     image: DairyCat,
+    path: "/Dairy",
   },
   {
     id: 3,
@@ -65,5 +70,6 @@ const category = [
     description:
       "High-quality, responsibly sourced meat and seafood. Choose from fresh cuts, marinated options, and more.",
     image: SeaFoodCat,
+    path: "/SeaFood",
   },
 ];
